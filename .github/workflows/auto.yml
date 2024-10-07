@@ -14,6 +14,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Check npm permissions
+      run: ls -la ./node_modules/.bin
+
     - name: Checkout code
       uses: actions/checkout@v2
 
