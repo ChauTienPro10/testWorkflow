@@ -20,7 +20,7 @@ jobs:
     - name: Set up Node.js
       uses: actions/setup-node@v2
       with:
-        node-version: '18.13.0'  # Thay đổi phiên bản Node.js nếu cần
+        node-version: '18'  # Thay đổi phiên bản Node.js nếu cần
 
     - name: Install dependencies
       run: npm install
