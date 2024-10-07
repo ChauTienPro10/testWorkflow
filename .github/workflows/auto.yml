@@ -24,14 +24,14 @@ jobs:
       with:
         node-version: '18'  # Thay đổi phiên bản Node.js nếu cần
 
-    - name: Check npm permissions
-      run: ls -la ./node_modules/.bin
+    - name: Fix permissions
+      run: chmod -R 755 ./node_modules/.bin
 
     - name: Install dependencies
       run: npm install
 
     - name: Run tests
-      run: npx test
+      run: npm test
 
     - name: Build
       run: npm run build  # Nếu bạn có script build, không bắt buộc
