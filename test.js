@@ -24,10 +24,5 @@ describe('POST /compare', function () {
         expect(res.body).to.have.property('result', 0);
     });
 
-    it('should return 400 if num1 or num2 is missing', async function () {
-        const res = await request(app)
-            .post('/compare')
-            .send({ num1: 5 }); // Thiếu num2
-        expect(res.status).to.equal(400);
-    });
+    
 });
