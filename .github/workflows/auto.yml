@@ -1,0 +1,32 @@
+name: Node.js CI
+
+on:
+  push:
+    branches: 
+      - main  # Thay đổi nếu bạn sử dụng nhánh khác
+  pull_request:
+    branches:
+      - main  # Thay đổi nếu bạn sử dụng nhánh khác
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '18.13.0'  # Thay đổi phiên bản Node.js nếu cần
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Run tests
+      run: npm test
+
+    - name: Build
+      run: npm run build  # Nếu bạn có script build, không bắt buộc
