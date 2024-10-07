@@ -31,7 +31,7 @@ jobs:
       run: npm install
 
     - name: Run tests
-      run: npm test
+      run: npx test
 
     - name: Build
       run: npm run build  # Nếu bạn có script build, không bắt buộc
